@@ -9,8 +9,8 @@ export default function Features() {
   const features = [
     {
       icon: BoltIcon,
-      title: "Lightning Fast Generation",
-      description: "Generate comprehensive ESG reports in minutes, not weeks. Our AI-powered platform automates data collection and analysis for instant results."
+      title: "Instant Reports",
+      description: "Our AI automates data collection & analysis. Get your ESG report ready in less than 10 minutes."
     },
     {
       icon: GlobeAltIcon,
@@ -47,7 +47,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-pearl rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+              className="bg-pearl rounded-xl p-6 shadow-2xl hover:shadow-3xl transition-shadow duration-300 group"
             >
               <div className="w-12 h-12 bg-brand-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-primary group-hover:bg-opacity-20 transition-colors duration-300">
                 <feature.icon className="w-6 h-6 text-leaf" />

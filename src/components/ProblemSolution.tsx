@@ -14,7 +14,7 @@ export default function ProblemSolution() {
         <div className="space-y-8">
           <div className="flex flex-col items-center gap-4">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 badge-ok flex items-center justify-center">
+              <div className="w-12 h-12 bg-pearl rounded-lg flex items-center justify-center">
                 <ExclamationTriangleIcon className="w-6 h-6 text-red-600" />
               </div>
             </div>
@@ -29,7 +29,7 @@ export default function ProblemSolution() {
           </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-pearl rounded-lg flex items-center justify-center">
                 <ClockIcon className="w-6 h-6 text-orange-600" />
               </div>
             </div>
@@ -44,7 +44,7 @@ export default function ProblemSolution() {
           </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-pearl rounded-lg flex items-center justify-center">
                 <DocumentTextIcon className="w-6 h-6 text-blue-600" />
               </div>
             </div>

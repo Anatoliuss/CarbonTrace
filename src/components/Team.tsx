@@ -9,7 +9,7 @@ export default function Team() {
       photo: "/images/founder-1.jpg"
     },
     {
-      name: "Nasser AlMansoor",
+      name: "Naser Karmustaji",
       role: "CFO",
       linkedin: "https://www.linkedin.com/in/naser-mansour-54622a247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       photo: "/images/founder-2.jpg"

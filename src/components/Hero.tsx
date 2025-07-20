@@ -51,7 +51,7 @@ export default function Hero() {
             href="/waitlist"
             className="inline-flex items-center gap-2 btn-cta font-inter font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
           >
-            Join the Waitlist
+            Get Early Access
             <ArrowTopRightOnSquareIcon className="w-5 h-5" aria-hidden="true" />
           </Link>
         </div>
@@ -59,15 +59,15 @@ export default function Hero() {
         {/* Trust indicators */}
         <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-blue-100 text-sm">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 badge-ok"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
             <span>UAE Compliance Ready</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 badge-ok"></div>
-            <span>Bilingual Support</span>
+            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+            <span>Flawless Arabic & English Reports</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 badge-ok"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
             <span>Auditor Approved</span>
           </div>
         </div>
