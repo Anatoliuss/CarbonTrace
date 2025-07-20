@@ -4,11 +4,14 @@ import Features from '@/components/Features'
 import Team from '@/components/Team'
 import FAQ from '@/components/FAQ'
 import Footer from '../components/Footer'
+import RegCoverage from '@/components/RegCoverage'
+import Disclaimer from '@/components/Disclaimer'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <RegCoverage />
       <ProblemSolution />
       <Features />
       <Team />
@@ -16,4 +19,4 @@ export default function Home() {
       <Footer />
     </main>
   )
-} 
+}

@@ -40,11 +40,20 @@ export const metadata: Metadata = {
     siteName: 'CarbonTrace MENA',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'CarbonTrace MENA Open Graph Cover',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'CarbonTrace MENA - Generate UAE-compliant ESG reports in minutes',
     description: 'Bilingual, auditor-ready, built for Decree-Law 11/2024.',
+    images: ['/og-cover.png'],
   },
   robots: {
     index: true,
@@ -73,10 +82,16 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${interTight.variable} ${robotoMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* <script defer data-domain="carbontracemena.com" src="https://plausible.io/js/script.js"></script> */}
+        <meta property="og:image" content="/og-cover.png" />
+        <meta property="og:type" content="website" />
+        <meta name="description" content="Bilingual, auditor-ready, built for Decree-Law 11/2024. CarbonTrace MENA helps businesses generate compliant ESG reports quickly and efficiently." />
+        <meta property="og:title" content="CarbonTrace MENA - Generate UAE-compliant ESG reports in minutes" />
+        <meta property="og:description" content="Bilingual, auditor-ready, built for Decree-Law 11/2024." />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>
   )
-} 
+}

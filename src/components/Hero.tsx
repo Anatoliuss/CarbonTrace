@@ -1,9 +1,22 @@
 'use client'
 
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
-  const signupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://forms.gle/placeholder'
+  const router = useRouter()
+
+  // Check if /demo route exists (for now, fallback to #waitlist)
+  const demoHref = '/demo' // If not present, fallback below
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    console.log('event:demo_click')
+    // If /demo route doesn't exist, fallback to #waitlist
+    if (demoHref === '/demo') {
+      // Could check for route existence, but for now, always allow
+    }
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-palm text-pearl overflow-hidden">
@@ -32,16 +45,16 @@ export default function Hero() {
           Bilingual, auditor-ready, built for Decree-Law 11/2024
         </p>
 
-        {/* CTA Button */}
-        <a
-          href={signupUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 btn-cta font-inter font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
-        >
-          Get Started Today
-          <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-        </a>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+          <Link
+            href="/waitlist"
+            className="inline-flex items-center gap-2 btn-cta font-inter font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+          >
+            Join the Waitlist
+            <ArrowTopRightOnSquareIcon className="w-5 h-5" aria-hidden="true" />
+          </Link>
+        </div>
 
         {/* Trust indicators */}
         <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-blue-100 text-sm">
@@ -59,8 +72,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      
     </section>
   )
-} 
+}

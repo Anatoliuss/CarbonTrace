@@ -4,27 +4,27 @@ export default function Team() {
   const founders = [
     {
       name: "Anatolii Chuvashlov",
-      role: "",
-      linkedin: "https://linkedin.com/in/anatolii-chuvashlov",
+      role: "CEO",
+      linkedin: "https://www.linkedin.com/in/anatolii-chuvashlov-004bb128a",
       photo: "/images/founder-1.jpg"
     },
     {
       name: "Nasser AlMansoor",
-      role: "",
-      linkedin: "https://linkedin.com/in/nasser-almansoor",
+      role: "CFO",
+      linkedin: "https://www.linkedin.com/in/naser-mansour-54622a247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       photo: "/images/founder-2.jpg"
     },
     {
       name: "Asylkhan Kali",
-      role: "",
-      linkedin: "https://linkedin.com/in/asylkhan-kali",
+      role: "CTO",
+      linkedin: "https://www.linkedin.com/in/asylkhankali?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4IUFOHTyQIqzp35Fk885yQ%3D%3D",
       photo: "/images/founder-3.jpg"
     }
   ]
 
   return (
-    <section className="py-20 bg-pearl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 bg-white">
+      <div className="max-w-5xl mx-auto px-4 rounded-lg shadow">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-inter-tight font-bold text-slate-900 mb-4">
@@ -72,19 +72,6 @@ export default function Team() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Message */}
-        <div className="text-center mt-16">
-          <div className="bg-pearl rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-inter-tight font-bold text-slate-900 mb-4">
-              Join Our Mission
-            </h3>
-            <p className="text-slate-600 leading-relaxed">
-              We're building the future of sustainable business in the MENA region. 
-              Ready to transform your ESG reporting? Let's connect.
-            </p>
-          </div>
         </div>
       </div>
     </section>
