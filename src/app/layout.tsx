@@ -57,23 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${interTight.variable} ${robotoMono.variable}`}>
       <head>
-  {/* Primary SVG (modern browsers) */}
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-  {/* Fallback PNGs */}
-  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-
-  {/* Legacy ICO */}
-  <link rel="shortcut icon" href="/favicon.ico" />
-
-  {/* iOS home‑screen */}
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-
-  {/* PWA manifest */}
-  <link rel="manifest" href="/site.webmanifest" />
-
-  {/* Uncomment when ready */}
+  {/* Uncomment when you’re ready to enable Plausible analytics */}
   {/* <script defer data-domain="carbontracemena.com" src="https://plausible.io/js/script.js"></script> */}
 </head>
 

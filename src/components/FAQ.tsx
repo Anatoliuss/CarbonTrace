@@ -10,30 +10,30 @@ import {
 export default function FAQ() {
   const faqs = [
     {
-      question: "What is UAE Decree-Law 11/2024 and how does CarbonTrace help with compliance?",
-      answer: "UAE Decree-Law 11/2024 mandates comprehensive ESG reporting for companies operating in the UAE. CarbonTrace MENA provides automated tools and templates specifically designed to meet these requirements, ensuring your reports are compliant and auditor-ready from day one."
+      q: "Which UAE reports does CarbonTrace generate?",
+      a: "One upload produces the Annual Emissions Report (AER), GHG Inventory CRF, Climate-Risk Adaptation Plan, Carbon-Credit Statement, and the ADX 31-KPI ESG disclosure. We also output ADGM / DFSA ‘comply-or-explain’ templates on request."
     },
     {
-      question: "How long does it take to generate an ESG report with CarbonTrace?",
-      answer: "Our platform can generate comprehensive ESG reports in minutes, not weeks. The exact time depends on your data availability, but most clients see their first report within 2-4 hours of initial setup."
+      q: "Does it cover Decree-Law 11/2024?",
+      a: "Yes—Decree-Law 11 sets the umbrella ESG rules. CarbonTrace automates every document that law references, plus the exchange-specific 31-KPI filing."
     },
     {
-      question: "Do you support both Arabic and English reporting?",
-      answer: "Yes, CarbonTrace MENA provides native bilingual support with region-specific terminology and formatting. All reports are automatically generated in both Arabic and English, meeting UAE regulatory standards."
+      q: "How long does it take to get a draft report?",
+      a: "Under 10 minutes once your utility bills, fuel logs, and HR snapshot are uploaded. AER XML + bilingual PDF are generated instantly."
     },
     {
-      question: "What types of companies can use CarbonTrace MENA?",
-      answer: "We serve companies of all sizes across the MENA region, from startups to multinational corporations. Our platform is particularly valuable for companies required to comply with UAE ESG regulations or those looking to demonstrate sustainability leadership."
+      q: "Do you support both Arabic and English?",
+      a: "Yes. All outputs are bilingual. Arabic terminology follows MOCCAE’s official glossary; English uses IFRS S-standard terms."
     },
     {
-      question: "How does CarbonTrace ensure data accuracy and compliance?",
-      answer: "Our platform uses AI-powered validation and built-in compliance checks based on UAE regulatory requirements. We also provide audit trails and documentation to support your reporting process and ensure regulatory acceptance."
+      q: "What company sizes can use CarbonTrace?",
+      a: "We serve single-facility SMEs up to multi-site ADX-listed groups. Pricing tiers scale with number of facilities and reports."
     },
     {
-      question: "What support do you provide during implementation?",
-      answer: "We offer comprehensive onboarding, training, and ongoing support. Our team includes regional experts who understand local regulations and can help you navigate the ESG reporting process effectively."
-    }
-  ]
+      q: "How do you ensure data accuracy?",
+      a: "Emission factors are locked to the MOCCAE 2024 factor library; every field passes unit & range checks, and an audit trail is attached for ISO 14065 verifiers."
+    },
+  ];
 
   return (
     <section className="py-20 bg-pearl text-palm">
@@ -53,10 +53,10 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-200">
               <AccordionTrigger className="text-left font-inter font-semibold text-slate-900 hover:text-brand-primary transition-colors py-6">
-                {faq.question}
+                {faq.q}
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 leading-relaxed pb-6">
-                {faq.answer}
+                {faq.a}
               </AccordionContent>
             </AccordionItem>
           ))}

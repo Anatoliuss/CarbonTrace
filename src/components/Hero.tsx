@@ -42,7 +42,7 @@ export default function Hero() {
 
         {/* One-liner */}
         <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Bilingual, auditor-ready, built for Decree-Law 11/2024
+          Bilingual, auditor-ready, Ready for all UAE climate & ESG filings
         </p>
 
         {/* CTA Buttons */}
@@ -51,7 +51,7 @@ export default function Hero() {
             href="/waitlist"
             className="inline-flex items-center gap-2 btn-cta font-inter font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
           >
-            Get Early Access
+            Join the Waitlist
             <ArrowTopRightOnSquareIcon className="w-5 h-5" aria-hidden="true" />
           </Link>
         </div>
