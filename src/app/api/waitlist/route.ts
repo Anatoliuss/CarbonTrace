@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { miniWaitlistSchema, fullWaitlistSchema } from '@/lib/validators/waitlist'
 import { addRecord, countRecords, inMemoryWaitlist } from '@/lib/waitlistStore'
-import { nanoid } from 'nanoid'
 import { promises as fs } from 'fs'
 import { sendWaitlistAlert } from '@/lib/email/sendWaitlistAlert'
 
@@ -17,19 +16,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  // Accept both mini and full forms
-  const parsed =
-    fullWaitlistSchema.safeParse(data) ||
-    miniWaitlistSchema.safeParse(data)
+  // Two-step validation: try full form, then mini form
+  let parsed: any = fullWaitlistSchema.safeParse(data);
+  if (!parsed.success) {
+    parsed = miniWaitlistSchema.safeParse(data);
+  }
 
   if (!parsed.success) {
-    return NextResponse.json({ error: parsed.error.issues[0]?.message || 'Validation failed' }, { status: 400 })
+    return NextResponse.json(
+      { error: parsed.error.issues[0]?.message ?? 'Validation failed' },
+      { status: 400 }
+    );
   }
 
   const record = {
-    id: nanoid(),
+    id: crypto.randomUUID(),
     ts: new Date().toISOString(),
-    ...data,
+    ...parsed.data,
   }
 
   // Write to file (append to array)
