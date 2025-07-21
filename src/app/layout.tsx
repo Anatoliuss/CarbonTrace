@@ -44,6 +44,8 @@ export const metadata: Metadata = {
   /* ------------- Favicons & PWA icons ------------- */
   icons: [
     // Comment this first line if you do NOT have an SVG favicon
+    { rel: 'icon', url: '/favicon.svg',            type: 'image/svg+xml' },
+
     { rel: 'icon', url: '/favicon-32x32.png',      sizes: '32x32', type: 'image/png' },
     { rel: 'icon', url: '/favicon-16x16.png',      sizes: '16x16', type: 'image/png' },
     { rel: 'shortcut icon', url: '/favicon.ico',   type: 'image/x-icon' },
