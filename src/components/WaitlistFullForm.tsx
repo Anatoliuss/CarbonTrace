@@ -74,7 +74,7 @@ export default function WaitlistFullForm() {
         console.log('event:waitlist_full_submit')
       } else {
         const data = await res.json()
-        setError(data?.error || 'Submission failed')
+        setError(data?.error === 'Validation failed' ? 'Invalid input' : 'Server error')
       }
     } catch (err) {
       setError('Network error')

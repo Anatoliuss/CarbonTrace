@@ -9,59 +9,69 @@ const WAITLIST_PATH = '/tmp/waitlist.json'
 export const runtime = 'nodejs'
 
 export async function POST(req: NextRequest) {
-  let data
   try {
-    data = await req.json()
-  } catch {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
-  }
+    let data
+    try {
+      data = await req.json()
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
+    }
 
-  // Two-step validation: try full form, then mini form
-  let parsed: any = fullWaitlistSchema.safeParse(data);
-  if (!parsed.success) {
-    parsed = miniWaitlistSchema.safeParse(data);
-  }
+    // Two-step validation: try full form, then mini form
+    let parsed: any = fullWaitlistSchema.safeParse(data);
+    if (!parsed.success) {
+      parsed = miniWaitlistSchema.safeParse(data);
+    }
 
-  if (!parsed.success) {
-    return NextResponse.json(
-      { error: parsed.error.issues[0]?.message ?? 'Validation failed' },
-      { status: 400 }
-    );
-  }
+    if (!parsed.success) {
+      console.error('[Zod-fail]', parsed.error.flatten().fieldErrors);
+      return NextResponse.json(
+        { error: parsed.error.issues[0]?.message ?? 'Validation failed' },
+        { status: 400 }
+      );
+    }
 
-  const record = {
-    id: crypto.randomUUID(),
-    ts: new Date().toISOString(),
-    ...parsed.data,
-  }
+    const record = {
+      id: crypto.randomUUID(),
+      ts: new Date().toISOString(),
+      ...parsed.data,
+    }
 
-  // Write to file (append to array)
-  let fileArr = []
-  try {
-    const file = await fs.readFile(WAITLIST_PATH, 'utf8')
-    fileArr = JSON.parse(file)
-    if (!Array.isArray(fileArr)) fileArr = []
-  } catch {
-    fileArr = []
-  }
-  fileArr.push(record)
-  try {
-    await fs.writeFile(WAITLIST_PATH, JSON.stringify(fileArr, null, 2), 'utf8')
-  } catch (e) {
-    // Ignore file write errors for demo
-  }
+    // Write to file (append to array)
+    let fileArr = []
+    try {
+      const file = await fs.readFile(WAITLIST_PATH, 'utf8')
+      fileArr = JSON.parse(file)
+      if (!Array.isArray(fileArr)) fileArr = []
+    } catch {
+      fileArr = []
+    }
+    fileArr.push(record)
+    try {
+      await fs.writeFile(WAITLIST_PATH, JSON.stringify(fileArr, null, 2), 'utf8')
+    } catch (e) {
+      // Ignore file write errors for demo
+    }
 
-  // Always add to in-memory
-  addRecord(record)
+    // Always add to in-memory
+    addRecord(record)
 
-  // Send alert email (do not block response)
-  try {
-    await sendWaitlistAlert(record)
-  } catch (e) {
-    console.error('alert-email-fail', e)
+    // Send alert email (do not block response)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await sendWaitlistAlert(record)
+      } catch (e) {
+        console.error('alert-email-fail', e)
+      }
+    } else {
+      console.warn('[waitlist] RESEND_API_KEY not set, skipping alert email');
+    }
+
+    return NextResponse.json({ ok: true }, { status: 201 })
+  } catch (err) {
+    console.error('[API-ERROR]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  return NextResponse.json({ ok: true }, { status: 201 })
 }
 
 export async function GET() {

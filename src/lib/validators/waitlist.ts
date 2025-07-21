@@ -9,7 +9,7 @@ export const miniWaitlistSchema = z.object({
     'Emission factors',
     'Arabic / English formatting',
     'Verifier coordination',
-  ]),
+  ]).optional(),
 }).passthrough();
 
 export const fullWaitlistSchema = miniWaitlistSchema.extend({
