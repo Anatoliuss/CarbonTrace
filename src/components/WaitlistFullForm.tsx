@@ -221,7 +221,7 @@ export default function WaitlistFullForm() {
       </button>
       {success && (
         <div className="text-green-700 mt-2" role="status" aria-live="polite">
-          Thanks! We’ll follow up. Meanwhile see the <a href="https://checklist.carbontracemena.com" className="underline" target="_blank" rel="noopener noreferrer">regulatory checklist</a>.
+          Thanks! We’ll follow up.
         </div>
       )}
       {error && (
