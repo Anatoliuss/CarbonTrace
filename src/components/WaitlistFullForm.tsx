@@ -5,9 +5,8 @@ import { fullWaitlistSchema } from '@/lib/validators/waitlist'
 
 const INDUSTRY_OPTIONS = [
   "Energy",
-  "Real Estate",
   "Heavy Industry",
-  "Finance",
+  "Transportation",
   "Other"
 ] as const
 

@@ -3,6 +3,7 @@ import { miniWaitlistSchema, fullWaitlistSchema } from '@/lib/validators/waitlis
 import { addRecord, countRecords, inMemoryWaitlist } from '@/lib/waitlistStore'
 import { nanoid } from 'nanoid'
 import { promises as fs } from 'fs'
+import { sendWaitlistAlert } from '@/lib/email/sendWaitlistAlert'
 
 const WAITLIST_PATH = '/tmp/waitlist.json'
 
@@ -49,6 +50,13 @@ export async function POST(req: NextRequest) {
 
   // Always add to in-memory
   addRecord(record)
+
+  // Send alert email (do not block response)
+  try {
+    await sendWaitlistAlert(record)
+  } catch (e) {
+    console.error('alert-email-fail', e)
+  }
 
   return NextResponse.json({ ok: true }, { status: 201 })
 }
