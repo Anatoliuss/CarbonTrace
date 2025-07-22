@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="text-center text-gulf text-sm mb-2">
             <a href="mailto:hello@carbontracemena.com" className="underline hover:text-brand-accent">hello@carbontracemena.com</a>
             {'  ·  '}
-            <a href="tel:+971585993854" className="underline hover:text-brand-accent">+971 55 123 4567</a>
+            <a href="tel:+971551234567" className="underline hover:text-brand-accent">+971 58 599 3854</a>
           </div>
         </div>
 
