@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 
 const ALERT_FROM = process.env.ALERT_FROM || 'waitlist@carbontracemena.com'
-const ALERT_TO = process.env.ALERT_TO || 'info@carbontracemena.com'
+const ALERT_TO = process.env.ALERT_TO || ''
 
 export type WaitlistRecord = { [key: string]: any }
 
