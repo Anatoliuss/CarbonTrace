@@ -6,19 +6,19 @@ export default function Team() {
       name: "Anatolii Chuvashlov",
       role: "CEO",
       linkedin: "https://www.linkedin.com/in/anatolii-chuvashlov-004bb128a",
-      photo: "/images/founder-1.jpg"
+      photo: "/images/CEO.jpg"
     },
     {
       name: "Naser Karmustaji",
       role: "CFO",
       linkedin: "https://www.linkedin.com/in/naser-mansour-54622a247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      photo: "/images/founder-2.jpg"
+      photo: "/images/CFO.jpg"
     },
     {
       name: "Asylkhan Kali",
       role: "CTO",
       linkedin: "https://www.linkedin.com/in/asylkhankali?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4IUFOHTyQIqzp35Fk885yQ%3D%3D",
-      photo: "/images/founder-3.jpg"
+      photo: "/images/CTO.jpg"
     }
   ]
 
@@ -43,10 +43,18 @@ export default function Team() {
               className="bg-pearl rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group"
             >
               {/* Photo Placeholder */}
-              <div className="w-24 h-24 badge-ok mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white font-inter font-bold text-2xl">
-                  {founder.name.split(' ').map(n => n[0]).join('')}
-                </span>
+              <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center overflow-hidden rounded-full bg-slate-200">
+                {founder.photo ? (
+                  <img
+                    src={founder.photo}
+                    alt={founder.name}
+                    className="object-cover w-32 h-32 scale-100"
+                  />
+                ) : (
+                  <span className="text-white font-inter font-bold text-2xl">
+                    {founder.name.split(' ').map(n => n[0]).join('')}
+                  </span>
+                )}
               </div>
 
               {/* Name */}
