@@ -213,7 +213,7 @@ export default function WaitlistFullForm() {
       </div>
       <button
         type="submit"
-        className="btn-cta w-full mt-2"
+        className="inline-flex items-center justify-center gap-2 btn-cta font-inter font-semibold px-6 py-3 rounded-lg transition-colors duration-200 mt-2 w-full sm:w-auto"
         disabled={submitting}
         aria-busy={submitting}
       >

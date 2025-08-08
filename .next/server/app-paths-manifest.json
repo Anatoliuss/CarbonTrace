@@ -1,3 +1,5 @@
 {
+  "/docs/regulatory/page": "app/docs/regulatory/page.js",
+  "/waitlist/page": "app/waitlist/page.js",
   "/page": "app/page.js"
 }

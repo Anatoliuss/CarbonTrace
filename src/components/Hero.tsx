@@ -37,12 +37,12 @@ export default function Hero() {
 
         {/* Main Promise */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter-tight font-bold text-white mb-6 leading-tight">
-          Generate UAE-compliant ESG reports in minutes
+          Draft-ready UAE AER/CRF in 14 days (Arabic & English)
         </h2>
 
         {/* One-liner */}
         <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Bilingual, auditor-ready, Ready for all UAE climate & ESG filings
+          We turn your facility data into regulator-ready drafts using our bilingual templates and analyst-assisted workflow.
         </p>
 
         {/* CTA Buttons */}
@@ -56,20 +56,11 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Trust indicators */}
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-blue-100 text-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-            <span>UAE Compliance Ready</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-            <span>Flawless Arabic & English Reports</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-            <span>Auditor Approved</span>
-          </div>
+        {/* Regulatory alignment note */}
+        <div className="mt-16 text-blue-100 text-sm max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center">
+            Built to align with UAE's Decree-Law 11/2024, Cabinet Resolution 67/2024, and ADX 31-KPI disclosures. Currently in pilot with select emitters.
+          </p>
         </div>
       </div>
     </section>

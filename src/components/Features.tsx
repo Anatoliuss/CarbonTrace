@@ -19,8 +19,8 @@ export default function Features() {
     },
     {
       icon: ShieldCheckIcon,
-      title: "Auditor-Ready Compliance",
-      description: "Built specifically for UAE Decree-Law 11/2024 with pre-approved templates and validation checks that ensure regulatory acceptance."
+      title: "Compliance Alignment",
+      description: "Bilingual templates modeled on UAE AER/CRF formats, plus validator rules to reduce review cycles."
     },
     {
       icon: ChartBarIcon,

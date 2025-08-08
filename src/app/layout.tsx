@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Inter, Inter_Tight, Roboto_Mono } from 'next/font/google';
 import './globals.css';
+import BackBar from '@/components/BackBar'
 
 /* ------------- Google Fonts ------------- */
 const inter       = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -63,7 +64,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <div className="min-h-screen flex flex-col">
+          <BackBar />
+          <div className="flex-1">{children}</div>
+        </div>
       </body>
     </html>
   );
